@@ -2,7 +2,15 @@ package com.epam.cdp.m2.hw2.aggregator;
 
 import javafx.util.Pair;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Java7Aggregator implements Aggregator {
 
@@ -39,7 +47,7 @@ public class Java7Aggregator implements Aggregator {
         list.sort(new Comparator<>() {
             @Override
             public int compare(Map.Entry<String, Long> o1, Map.Entry<String, Long> o2) {
-                if(o2.getValue().compareTo(o1.getValue()) == 0) {
+                if (o2.getValue().compareTo(o1.getValue()) == 0) {
                     return o1.getKey().compareTo(o2.getKey());
                 }
                 return o2.getValue().compareTo(o1.getValue());
@@ -71,13 +79,13 @@ public class Java7Aggregator implements Aggregator {
         for (int i = 0; i < words.size(); i++) {
             tempString = words.get(i);
             for (int j = i + 1; j < words.size(); j++) {
-                if(words.get(j).equalsIgnoreCase(tempString)){
+                if (words.get(j).equalsIgnoreCase(tempString)) {
                     duplicates.add(tempString.toUpperCase());
                 }
             }
         }
 
-        if(limit > duplicates.size()) {
+        if (limit > duplicates.size()) {
             return new ArrayList<>(duplicates);
         }
         return new ArrayList<>(duplicates).subList(0, (int) limit);

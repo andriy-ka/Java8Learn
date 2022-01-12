@@ -2,7 +2,11 @@ package com.epam.cdp.m2.hw2.aggregator;
 
 import javafx.util.Pair;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Java8ParallelAggregator implements Aggregator {
